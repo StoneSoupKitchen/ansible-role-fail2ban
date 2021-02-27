@@ -1,0 +1,12 @@
+# Install the fail2ban package.
+---
+- name: Define fail2ban_package
+  set_fact:
+    fail2ban_package: "{{ __fail2ban_package }}"
+  when: fail2ban_package is not defined
+
+- name: Install fail2ban
+  apt:
+    name: "{{ fail2ban_package }}"
+    state: "{{ fail2ban_package_state }}"
+
