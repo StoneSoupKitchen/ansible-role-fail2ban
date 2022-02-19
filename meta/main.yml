@@ -8,8 +8,8 @@ galaxy_info:
     - name: Debian
       versions:
         - buster
+        - bullseye
   galaxy_tags:
     - fail2ban
     - dmz
 dependencies: []
-

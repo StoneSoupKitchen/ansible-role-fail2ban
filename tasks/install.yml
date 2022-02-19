@@ -9,4 +9,3 @@
   apt:
     name: "{{ fail2ban_package }}"
     state: "{{ fail2ban_package_state }}"
-

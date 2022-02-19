@@ -1,0 +1,71 @@
+---
+- name: Verify
+  hosts: all
+  gather_facts: false
+  tasks:
+  - name: Collect host package information
+    package_facts:
+      manager: "auto"
+
+  - name: Package fail2ban should be installed
+    package:
+      name: fail2ban
+      state: present
+    check_mode: true
+    register: install
+    failed_when: (install is changed) or (install is failed)
+
+  - name: File /etc/fail2ban/fail2ban.conf should exist with correct permissions
+    file:
+      path: /etc/fail2ban/fail2ban.conf
+      state: file
+      owner: root
+      group: root
+      mode: '0644'
+    check_mode: true
+    register: config
+    failed_when: (config is changed) or (config is failed)
+
+  - name: Directory /etc/fail2ban/fail2ban.d should exist with correct permissions
+    file:
+      path: /etc/fail2ban/fail2ban.d
+      state: directory
+      owner: root
+      group: root
+      mode: '0755'
+    check_mode: true
+    register: config
+    failed_when: (config is changed) or (config is failed)
+
+  - name: File /etc/fail2ban/jail.conf should exist with correct permissions
+    file:
+      path: /etc/fail2ban/jail.conf
+      state: file
+      owner: root
+      group: root
+      mode: '0644'
+    check_mode: true
+    register: config
+    failed_when: (config is changed) or (config is failed)
+
+  - name: Directory /etc/fail2ban/jail.d should exist with correct permissions
+    file:
+      path: /etc/fail2ban/jail.d
+      state: directory
+      owner: root
+      group: root
+      mode: '0755'
+    check_mode: true
+    register: config
+    failed_when: (config is changed) or (config is failed)
+
+  - name: File /etc/fail2ban/jail.local should exist with correct permissions
+    file:
+      path: /etc/fail2ban/jail.local
+      state: file
+      owner: root
+      group: root
+      mode: '0644'
+    check_mode: true
+    register: config
+    failed_when: (config is changed) or (config is failed)
