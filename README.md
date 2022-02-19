@@ -17,7 +17,7 @@ and their default values.
 
 | Name                     | Default Value | Description                      |
 | ------------------------ | ------------- | -------------------------------- |
-| `fail2ban_package` | systemd-journal-remote | Name of the fail2ban package. Use `name=ver` format to pin. |
+| `fail2ban_package` | fail2ban | Name of the fail2ban package. Use `name=ver` format to pin. |
 | `fail2ban_package_state` | present | Installation state for the fail2ban package. |
 
 ## Examples
