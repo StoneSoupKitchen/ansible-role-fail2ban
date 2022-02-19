@@ -1,40 +1,50 @@
-# stonesoupkitchen-fail2ban
+[![CI](https://github.com/StoneSoupKitchen/ansible-role-fail2ban/actions/workflows/ci.yml/badge.svg)](https://github.com/StoneSoupKitchen/ansible-role-fail2ban/actions/workflows/ci.yml)
+
+# Ansible role: fail2ban
 
 An Ansible role for configuring fail2ban.
 
 ## Requirements
 
-TODO.
+Supported operating systems:
+* Debian 10 (Buster)
+* Debian 11 (Bullseye)
 
 ## Role Variables
 
-TODO.
+The following table lists all variables that can be overridden
+and their default values.
 
-## Dependencies
+| Name                     | Default Value | Description                      |
+| ------------------------ | ------------- | -------------------------------- |
+| `fail2ban_package` | systemd-journal-remote | Name of the fail2ban package. Use `name=ver` format to pin. |
+| `fail2ban_package_state` | present | Installation state for the fail2ban package. |
 
-TODO.
+## Examples
 
-## Example Playbook
-
-TODO.
+```yaml
+- hosts: all
+  roles:
+    - stonesoupkitchen.fail2ban
+```
 
 ## Development
 
-Ceate a virtual environment and install modules from requirements.txt:
+A Makefile is included for easier development with `pipenv`.
+After cloning this repository,
+use the following commands to set up an environment.
 
-    python3 -m venv venv
-    source venv/bin/activate
-    pip install -r requirements.txt
+    pipenv install --dev
 
-Enable pre-commit checks:
+To lint your changes with ansible-lint:
 
-    pre-commit install
+    make lint
 
-Run molecule tests:
+To run tests with molecule:
 
-    molecule test
+    make test
 
 ## License
 
-See [LICENSE](LICENSE).
+See [LICENSE](./LICENSE).
 
