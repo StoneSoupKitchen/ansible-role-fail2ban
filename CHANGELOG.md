@@ -1,6 +1,14 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [0.1.2] - 2022-03-03
+
+### Miscellaneous Tasks
+
+- Bump actions/setup-python from 2 to 3 (#2) (bdc5432)
+- Bump ansible-core from 2.11.8 to 2.11.9 (#3) (fc4e069)
+- Bump actions/checkout from 2 to 3 (#4) (61d8e0a)
+
 ## [0.1.1] - 2022-02-19
 
 ### Documentation
